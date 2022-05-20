@@ -1,0 +1,24 @@
+name: FizzBuzz
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fizzbuzz:
+    runs-on: ubuntu-latest
+    name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
+    strategy:
+      matrix:
+        otp: ['20.3', '21.3', '22.2']
+        elixir: ['1.8.2', '1.9.4']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+      - name: compile
+        run: elixirc fizzbuzz.ex
+      - name: fizzbuzz
+        run: elixir main.exs
