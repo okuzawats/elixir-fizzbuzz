@@ -1,3 +1,3 @@
-Enum.each(1..100, fn n ->
-  IO.puts FizzBuzz.fb(n)
-end)
+(1..100)
+  |> Enum.map(&FizzBuzz.fb/1)
+  |> Enum.each(&IO.puts(&1))
