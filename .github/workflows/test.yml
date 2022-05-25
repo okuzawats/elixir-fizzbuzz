@@ -1,4 +1,4 @@
-name: FizzBuzz
+name: Test
 on:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  fizzbuzz:
+  test:
     runs-on: ubuntu-latest
     name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
     strategy:
@@ -20,7 +20,5 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - name: compile
-        run: mix compile
-      - name: fizz_buzz
-        run: mix fizz_buzz
+      - name: test
+        run: mix test

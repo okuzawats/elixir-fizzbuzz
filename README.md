@@ -8,7 +8,7 @@ See Wikipedia :)
 
 - [Fizz buzz \- Wikipedia](https://en.wikipedia.org/wiki/Fizz_buzz)
 
-## How to run locally
+## How to run
 
 After installing docker and docker compose, build the container image. For Ubuntu, you can build it with the command below.
 
@@ -16,28 +16,23 @@ After installing docker and docker compose, build the container image. For Ubunt
 $ docker-compose build --build-arg UID=$(id -u) --build-arg GID=$(id -g) elixir
 ```
 
-After building the image, you can run it.
+After building the image, you can run it with `docker-compose`.
 
 ```console
 $ docker-compose run --rm elixir /bin/bash
 ```
 
-Compile `fizzbuzz.ex` and run it from Elixir script file.
+Compile and run it with `mix`.
 
 ```console
-$ elixirc fizzbuzz.ex 
-$ elixir main.exs
+$ mix compile
+$ mix fizz_buzz
 ```
 
-## How to run on GitHub Actions
+## How to run test
 
-You can setup Erlang/OTP environment with `erlef/setup-beam`.
-
-* [erlef/setup-beam: Set up your BEAM-based GitHub Actions workflow (Erlang, Elixir, Gleam, ...)](https://github.com/erlef/setup-beam)
-
-After that step, you can compile `fizzbuzz.ex` and run it from Elixir script file.
+You can run test with `mix`.
 
 ```console
-$ elixirc fizzbuzz.ex 
-$ elixir main.exs
+$ mix test
 ```
