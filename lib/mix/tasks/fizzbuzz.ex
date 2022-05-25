@@ -4,8 +4,8 @@ defmodule Mix.Tasks.FizzBuzz do
   use Mix.Task
 
   def run(_) do
-    (1..100)
-      |> Enum.map(&FizzBuzz.fb/1)
-      |> Enum.each(&IO.puts(&1))
+    1..100
+    |> Enum.map(&FizzBuzz.fb/1)
+    |> Enum.each(&IO.puts(&1))
   end
 end
