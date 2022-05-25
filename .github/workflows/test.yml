@@ -20,7 +20,5 @@ jobs:
         with:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
-      - name: compile
-        run: mix compile
       - name: test
         run: mix test
