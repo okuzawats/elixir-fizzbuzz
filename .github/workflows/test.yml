@@ -21,6 +21,6 @@ jobs:
           otp-version: ${{matrix.otp}}
           elixir-version: ${{matrix.elixir}}
       - name: compile
-        run: elixirc lib/fizzbuzz.ex
+        run: mix compile
       - name: test
         run: mix test
