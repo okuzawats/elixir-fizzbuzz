@@ -28,3 +28,11 @@ Compile and run it with `mix`.
 $ mix compile
 $ mix fizz_buzz
 ```
+
+## How to run test
+
+You can run test with `mix`.
+
+```console
+$ mix test
+```
