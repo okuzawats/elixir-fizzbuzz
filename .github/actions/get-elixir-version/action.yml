@@ -1,0 +1,17 @@
+name: get project Elixir version
+description: read the elixir version from mise.toml and set it as an output variable.
+
+outputs:
+  version:
+    description: Elixir version defined in mise.toml
+    value: ${{ steps.get-elixir-version.outputs.version }}    
+
+runs:
+  using: "composite"
+  steps:
+    - name: get Elixir version from mise.toml
+      id: get-elixir-version
+      shell: bash
+      run: |
+        # Extract the Elixir version from `elixir = "x.x.x"` in mise.toml
+        echo "version=$(sed -n 's/^elixir = "\(.*\)"/\1/p' mise.toml)" >> "$GITHUB_OUTPUT"
