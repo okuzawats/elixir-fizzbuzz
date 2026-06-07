@@ -8,6 +8,12 @@ Another FizzBuzz implementation in Elixir.
 mise install
 ```
 
+## format
+
+```bash
+mix format "*.exs"
+```
+
 ## run
 
 ```bash
