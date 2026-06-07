@@ -7,3 +7,9 @@ Another FizzBuzz implementation in Elixir.
 ```bash
 mise install
 ```
+
+## run
+
+```bash
+elixir main.exs
+```
