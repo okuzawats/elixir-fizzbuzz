@@ -2,7 +2,7 @@ name: "Format"
 
 on:
   push:
-    branches: ["main", "feature/run-on-github-actions"]
+    branches: ["main"]
 
 jobs:
   format:
