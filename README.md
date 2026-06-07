@@ -11,7 +11,7 @@ mise install
 ## format
 
 ```bash
-mix format "*.exs"
+mix format '*.exs'
 ```
 
 ## run
